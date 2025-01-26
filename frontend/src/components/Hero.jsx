@@ -1,7 +1,7 @@
 import {Swiper,SwiperSlide} from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import {pagination} from 'swiper/modules'
+import {Autoplay, Pagination} from 'swiper/modules'
 
 function Hero() {
   return (
@@ -14,22 +14,46 @@ function Hero() {
         </div>
         <div className='md:w-1/2 w-full mx-auto'>
         <Swiper
-            slidesPerView={1}
-            spaceBetween={10}
-            pagination ={{
-                clickable : true,
-            }}
-            breakpoints={{ 
+    slidesPerView={1}
+    spaceBetween={10}
+    pagination={{
+        clickable: true,
+    }}
+    autoplay={{
+        delay: 1500,
+        disableOnInteraction: false,
+    }}
+    breakpoints={{
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 1,
+            spaceBetween: 40,
+        },
+        1024: {
+            slidesPerView: 1,
+            spaceBetween: 50,
+        },
+    }}
+    modules={[Pagination, Autoplay]}
+    className='mySwiper'
+>
+    <SwiperSlide>
+        <img src='' alt='' className='w-full lg:h-[420px] sm:h-96 h-80' />
+    </SwiperSlide>
+    <SwiperSlide>
+        <img src='' alt='' className='w-full lg:h-[420px] sm:h-96 h-80' />
+    </SwiperSlide>
+    <SwiperSlide>
+        <img src='' alt='' className='w-full lg:h-[420px] sm:h-96 h-80' />
+    </SwiperSlide>
+    <SwiperSlide>
+        <img src='' alt='' className='w-full lg:h-[420px] sm:h-96 h-80' />
+    </SwiperSlide>
+</Swiper>
 
-            }}
-            modules={[pagination]}
-            className='mySwiper' >
-                <SwiperSlide>
-                    <img src='' alt=''/>
-
-                </SwiperSlide>
-            
-        </Swiper>
         </div>
         
     </div>
